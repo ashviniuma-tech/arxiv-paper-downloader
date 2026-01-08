@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document Similarity Search</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <header>
             <h1><i class="fas fa-file-pdf"></i> Document Similarity Search</h1>
+            
         </header>
 
         <div class="input-section">
@@ -22,13 +23,14 @@
         </div>
 
         <div id="loading" class="loading hidden">
-            <i class="fas fa-spinner fa-spin"></i> Searching arXiv...
+            <i class="fas fa-spinner fa-spin"></i> Searching arXiv for relevant papers...
         </div>
 
+        <div id="error" class="error hidden"></div>
+
         <div id="results" class="results hidden">
-            <div class="stats">
-                <span id="totalPapers"></span> papers found
-            </div>
+            <!-- ✅ TOP PAPERS SECTION - NEW! -->
+            
             <div class="table-container">
                 <table id="papersTable">
                     <thead>
@@ -43,11 +45,21 @@
                     <tbody></tbody>
                 </table>
             </div>
+            <br>
+            <div class="stats">
+                Total: <span id="totalPapers">0</span> papers found
+            </div>
+            <div id="topPapers" class="top-papers-section hidden">
+                <h3 style="margin: 0 0 20px 0; font-size: 1.5em;">
+                    <i class="fas fa-star"></i> Top 5 Most Relevant Papers
+                </h3>
+                <div class="top-papers-grid">
+                    <!-- Top papers will be inserted here -->
+                </div>
+            </div>
         </div>
-
-        <div id="error" class="error hidden"></div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="/script.js"></script>
 </body>
 </html>
